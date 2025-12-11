@@ -21,7 +21,7 @@
     height: auto;
     object-fit: cover;
     border-radius: 0.5rem;
-    max-height: 700px; /* ⬅️ Much smaller height than before */
+    max-height: 750px; /* ⬅️ Much smaller height than before */
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   }
 

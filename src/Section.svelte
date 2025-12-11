@@ -16,7 +16,7 @@
   }
 
   .card {
-    background: white;
+
     border-radius: 1rem;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
     padding: 2rem;
@@ -47,14 +47,22 @@
 <div class="card-wrapper">
   <div class="card">
     <h2>{title}</h2>
-
     {#each sections as section}
-      {#if section.subheading}
+      <section>
         <h3>{section.subheading}</h3>
-      {/if}
-      {#each section.paragraphs as paragraph}
-        <p>{paragraph}</p>
-      {/each}
+        {#each section.paragraphs as paragraph}
+          <p>
+            {#each paragraph as segment}
+              {#if segment.type === 'text'}
+                {@html segment.content}
+              {:else if segment.type === 'link'}
+                <a href={segment.url} {...(segment.args ?? {})}>{segment.content}</a>
+              {/if}
+            {/each}
+          </p>
+        {/each}
+      </section>
     {/each}
+    <slot />
   </div>
 </div>

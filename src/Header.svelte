@@ -1,119 +1,111 @@
 <script>
   import { slide } from 'svelte/transition';
+  import "/src/app.css";
 
   let menuOpen = false;
 
+  const navLinks = [
+    { href: "/dayuse", label: "Day Use" },
+    { href: "/membership", label: "Membership" },
+    { href: "/ranges", label: "Shooting" },
+    { href: "/archery", label: "Archery" },
+    { href: "/airfield", label: "R/C Aircraft" },
+    { href: "/announcements", label: "Announcements" },
+    { href: "/legal", label: "Legal" }
+    //{ href: "/offroad", label: "Off Road Vehicles" },
+    //{ href: "/contact", label: "Contact" },
+    //{ href: "/terms", label: "Terms of Service" }
+  ];
+  
   function toggleMenu() {
     menuOpen = !menuOpen;
   }
 </script>
 
 <style>
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem 2rem;
-    background: white;
-    color: #111827;
-    flex-wrap: wrap;
-    font-family: "Inter", "Segoe UI", "Helvetica Neue", sans-serif;
+
+  /* desktop nav */
+  .desktop-nav ul{
+    background-color:cyan;
+    display: flex; 
   }
 
-  .left-group {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
+  .desktop-nav ul li {
+    margin: 10px;
   }
 
-  .logo a {
-    display: block;
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    color: inherit;
-    text-decoration: none;
+  .desktop-nav ul li a {
+    color: blue;
+    font-size: 1.4em;
   }
 
-  nav {
-    display: none;
-    gap: 2rem;
+  ul li a:hover {
+    color: red;
+  }
+  /*  */
+
+/* mobile nav */
+  .mobile-nav button {
+    font-size: 3em;
   }
 
-  a {
-    color: #374151;
-    text-decoration: none;
-    font-size: 1.125rem;
-    font-weight: 500;
+
+
+  .mobile-nav ul {
+    padding: 5px 5px 5px 20px;
+    margin: 0px 0px 0px 0px;
+    background-color: lightgray;
+    border: 2px solid gray;
   }
 
-  a:hover {
-    color: #111827;
-    text-decoration: underline;
-  }
 
-  .menu-button {
-    background: none;
-    border: none;
-    font-size: 2rem;
-    color: #111827;
-    cursor: pointer;
-    display: block;
-  }
 
-  .mobile-menu {
-    display: block;
-    width: 100%;
-    box-sizing: border-box;
-    padding: 1rem 2rem;
-    background-color: #f9fafb;
-    border-top: 1px solid #e5e7eb;
-    font-family: inherit;
-  }
+  .mobile-nav a {
+    color: teal;
+    font-size: 2em;
+    position: right;
+    align-items: right;
 
-  .mobile-menu a {
-    display: block;
-    padding: 0.75rem 0;
   }
-
-  @media (min-width: 768px) {
-    .menu-button {
+  
+  
+  
+  @media (max-width: 992px) {
+    .desktop-nav {
       display: none;
     }
+  }
 
-    nav {
-      display: flex;
-    }
-
-    .mobile-menu {
-      display: none !important;
+  @media (min-width: 993px) {
+    .mobile-nav {
+      display: none;
     }
   }
+  
 </style>
-
-
-<header>
-  <div class="left-group">
-    <div class="logo">
-      <a href="/">KSP</a>
-    </div>
-
-    <nav>
-      <a href="/">Home</a>
-      <a href="/about">About</a>
-      <a href="/contact">Contact</a>
-    </nav>
-  </div>
-
-  <button class="menu-button" on:click={toggleMenu} aria-label="Toggle menu" aria-expanded={menuOpen}>
+<nav class="mobile-nav">
+  <button  on:click={toggleMenu}>
     ☰
   </button>
-</header>
+  
+  <a href="/">KSP</a>
+  {#if menuOpen}
+  <ul class="mobile-nav">
+    {#each navLinks as link}
+      <li><a href={link.href} on:click={() => (menuOpen = false)}>{link.label}</a></li>
+    {/each}
+  </ul>
+  {/if}
 
-{#if menuOpen}
-  <div class="mobile-menu" transition:slide={{ duration: 250 }}>
-    <a href="/">Home</a>
-    <a href="/about">About</a>
-    <a href="/contact">Contact</a>
-  </div>
-{/if}
+
+</nav>
+
+<nav class="desktop-nav">
+  <ul>
+    <li><a href="/">KSP</a></li>
+    {#each navLinks as link}
+      <li><a href={link.href}>{link.label}</a></li>
+    {/each}
+  </ul>
+</nav>
+
