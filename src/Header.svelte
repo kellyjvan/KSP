@@ -1,5 +1,4 @@
 <script>
-  import { slide } from 'svelte/transition';
   import "/src/app.css";
 
   let menuOpen = false;
@@ -16,6 +15,10 @@
     //{ href: "/contact", label: "Contact" },
     //{ href: "/terms", label: "Terms of Service" }
   ];
+
+  function closeMenu() {
+    menuOpen = false;
+  }
   
   function toggleMenu() {
     menuOpen = !menuOpen;
@@ -39,36 +42,66 @@
     font-size: 1.4em;
   }
 
-  ul li a:hover {
-    color: red;
+  a:hover {
+    color: blue;
   }
   /*  */
 
+  
 /* mobile nav */
-  .mobile-nav button {
-    font-size: 3em;
+
+
+
+
+ .mobile-nav .button-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 25px 5px 25px;
+    font-size: 1.0em;
+    a {
+      color: darkslategray;
+      font-size: 2em;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    
+    button {
+      border-radius: 15px;
+      font-size: 2em;
+    }
+ }
+
+  .mobile-nav .dropdown ul {
+    display: inline-block;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
+    background-color: rgb(223, 230, 230);
+    border-radius: 4px;
+    margin-right: 10px;
   }
 
-
-
-  .mobile-nav ul {
-    padding: 5px 5px 5px 20px;
-    margin: 0px 0px 0px 0px;
-    background-color: lightgray;
-    border: 2px solid gray;
+  .mobile-nav .dropdown ul a li {
+    font-size: 1.2em;
+    padding: 5px 20px 5px 20px;
   }
 
-
-
-  .mobile-nav a {
-    color: teal;
-    font-size: 2em;
-    position: right;
-    align-items: right;
-
+  .close-button {
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    background-color: rgb(128, 126, 126);
+    padding: 10px 15px 10px 15px;
+    span {
+      font-size: 1em;
+    }
   }
-  
-  
+
+  .mobile-nav .dropdown {
+    display: flex;
+    right: 0;
+    position: absolute;
+  }  
   
   @media (max-width: 992px) {
     .desktop-nav {
@@ -84,18 +117,29 @@
   
 </style>
 <nav class="mobile-nav">
-  <button  on:click={toggleMenu}>
+  <div class="button-row">
+   <a href="/" on:click={closeMenu}>KSP</a>
+    <button  on:click={toggleMenu}>
     ☰
-  </button>
-  
-  <a href="/">KSP</a>
-  {#if menuOpen}
-  <ul class="mobile-nav">
+    </button>
+  </div>
+
+  <div class="dropdown">
+    {#if menuOpen}
+    <ul class="mobile-nav">
     {#each navLinks as link}
-      <li><a href={link.href} on:click={() => (menuOpen = false)}>{link.label}</a></li>
+      <a href={link.href} on:click={() => (menuOpen = false)}><li>{link.label}</li></a>
     {/each}
+    <button type="button" class="close-button" on:click={() => (menuOpen = false)}><span>Close   ▲</span></button>
   </ul>
+
   {/if}
+
+  </div>
+
+ 
+
+
 
 
 </nav>
