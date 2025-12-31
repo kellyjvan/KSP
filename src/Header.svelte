@@ -29,17 +29,17 @@
 
   /* desktop nav */
   .desktop-nav ul{
-    background-color:cyan;
     display: flex; 
   }
 
   .desktop-nav ul li {
-    margin: 10px;
+    margin: 5px;
+    padding: 5px;
   }
 
   .desktop-nav ul li a {
-    color: blue;
-    font-size: 1.4em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.5em;
   }
 
   a:hover {
@@ -48,11 +48,7 @@
   /*  */
 
   
-/* mobile nav */
-
-
-
-
+ /* mobile nav */
  .mobile-nav .button-row {
     display: flex;
     justify-content: space-between;
@@ -116,6 +112,7 @@
   }
   
 </style>
+
 <nav class="mobile-nav">
   <div class="button-row">
    <a href="/" on:click={closeMenu}>KSP</a>
@@ -131,17 +128,9 @@
       <a href={link.href} on:click={() => (menuOpen = false)}><li>{link.label}</li></a>
     {/each}
     <button type="button" class="close-button" on:click={() => (menuOpen = false)}><span>Close   ▲</span></button>
-  </ul>
-
-  {/if}
-
+    </ul>
+    {/if}
   </div>
-
- 
-
-
-
-
 </nav>
 
 <nav class="desktop-nav">
@@ -152,4 +141,3 @@
     {/each}
   </ul>
 </nav>
-
