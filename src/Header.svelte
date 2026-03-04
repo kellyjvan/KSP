@@ -34,11 +34,16 @@
 
   .desktop-nav ul li {
     margin: 5px;
-    padding: 5px;
   }
 
   .desktop-nav ul li a {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.2em;
+    margin-top: 8px;
+  }
+
+  .desktop-nav .home-logo {
+    margin-right: 20px;
+    font-weight: bold;
     font-size: 1.5em;
   }
 
@@ -135,7 +140,7 @@
 
 <nav class="desktop-nav">
   <ul>
-    <li><a href="/">KSP</a></li>
+    <li><a href="/" class="home-logo">Klamath Sportsman's Park</a></li>
     {#each navLinks as link}
       <li><a href={link.href}>{link.label}</a></li>
     {/each}
