@@ -27,30 +27,53 @@
 
 <style>
 
-  /* desktop nav */
-  .desktop-nav ul{
-    display: flex; 
-  }
+/* =========================
+   DESKTOP NAV - Clean Gov Style
+========================= */
 
-  .desktop-nav ul li {
-    margin: 5px;
-  }
+.desktop-nav {
+  width: 100%;
+  background-color: #f3f4f6;
+  border-bottom: 1px solid #d1d5db;
+}
 
-  .desktop-nav ul li a {
-    font-size: 1.2em;
-    margin-top: 8px;
-  }
+.nav-container {
+  width: 100%;
+  padding-left: 24px;
+  padding-right: 24px;
 
-  .desktop-nav .home-logo {
-    margin-right: 20px;
-    font-weight: bold;
-    font-size: 1.5em;
-  }
+  display: flex;
+  align-items: center;
+  gap: 48px;
 
-  a:hover {
-    color: blue;
-  }
-  /*  */
+  height: 68px;
+}
+
+.brand a {
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #111827;
+  white-space: nowrap;
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-size: 0.95rem;
+  color: #374151;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
 
   
  /* mobile nav */
@@ -139,10 +162,15 @@
 </nav>
 
 <nav class="desktop-nav">
-  <ul>
-    <li><a href="/" class="home-logo">Klamath Sportsman's Park</a></li>
-    {#each navLinks as link}
-      <li><a href={link.href}>{link.label}</a></li>
-    {/each}
-  </ul>
+  <div class="nav-container">
+    <div class="brand">
+      <a href="/">Klamath Sportsman's Park</a>
+    </div>
+
+    <ul class="nav-links">
+      {#each navLinks as link}
+        <li><a href={link.href}>{link.label}</a></li>
+      {/each}
+    </ul>
+  </div>
 </nav>

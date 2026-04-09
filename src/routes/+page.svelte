@@ -6,53 +6,11 @@
 </script>
 
 <style>
-  img {
-    max-width: 100%;
-  }
 
-  p {
-    margin: 0 0 1em 0;
-  }
-
-  @media (width >= 500px) {
-  .media {
-    display: grid;
-    grid-template-columns: fit-content(200px) 1fr;
-    grid-template-rows: 1fr auto;
-    grid-template-areas:
-      "image content"
-      "image footer";
-    grid-gap: 20px;
-    margin-bottom: 4em;
-  }
-
-  .media-flip {
-    grid-template-columns: 1fr fit-content(250px);
-    grid-template-areas:
-      "content image"
-      "footer image";
-  }
-
-  .img {
-    grid-area: image;
-  }
-
-  .content {
-    grid-area: content;
-  }
-}
 </style>
 
 <Header />
+<h1>Welcome!</h1>
+<p>Memberships are closed for the year. Check back June 1!</p>
 
-<div class="media">
-  <div class="img">
-    <img
-      src="https://mdn.github.io/shared-assets/images/examples/balloons_square.jpg"
-      alt="Balloons" />
-  </div>
 
-  <div class="content">
-    <p>Welcome to the park!</p>
-  </div>
-</div>
