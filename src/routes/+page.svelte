@@ -1,6 +1,10 @@
 <script>
-  function handleCTA() {
-    alert("Redirecting...");
+  function becomeMember() {
+    alert("Go to membership signup");
+  }
+
+  function dayUse() {
+    alert("Go to day use info");
   }
 
   const features = [
@@ -73,11 +77,11 @@
   .container {
     max-width: 1000px;
     margin: auto;
-    padding: 3rem 1.5rem;
+    padding: 2.5rem 1.5rem 3rem;
   }
 
   .section {
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
   }
 
   .section h2 {
@@ -87,6 +91,61 @@
 
   .section p {
     max-width: 700px;
+  }
+
+  /* CTA (NOW BELOW EXPERIENCE BLOCK) */
+  .cta {
+    margin: 2rem 0 3rem;
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    background: #e9efe6;
+    border-radius: 12px;
+    border: 1px solid #d6dfd0;
+  }
+
+  .cta-content h2 {
+    margin-bottom: 0.5rem;
+    color: #2f3e2f;
+  }
+
+  .cta-content p {
+    margin-bottom: 1.5rem;
+    color: #4a5a4a;
+  }
+
+  .cta-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: center;
+  }
+
+  button {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.95rem;
+    border-radius: 6px;
+    cursor: pointer;
+    border: none;
+    min-width: 200px;
+  }
+
+  .primary {
+    background: #3d5a40;
+    color: white;
+  }
+
+  .primary:hover {
+    background: #2f4632;
+  }
+
+  .secondary {
+    background: white;
+    color: #3d5a40;
+    border: 1px solid #3d5a40;
+  }
+
+  .secondary:hover {
+    background: #f3f6f1;
   }
 
   /* FEATURE CARDS */
@@ -121,11 +180,6 @@
     flex-shrink: 0;
   }
 
-  .feature-text {
-    display: flex;
-    flex-direction: column;
-  }
-
   .feature-text h3 {
     margin: 0 0 0.25rem 0;
     color: #2f3e2f;
@@ -140,55 +194,10 @@
 
   .cta-hint {
     display: inline-flex;
-    align-items: center;
-    gap: 0.25rem;
     margin-top: 0.5rem;
     font-size: 0.85rem;
     color: #3d5a40;
     font-weight: 500;
-  }
-
-  .arrow {
-    transition: transform 0.2s ease;
-  }
-
-  .feature-card:hover .arrow {
-    transform: translateX(4px);
-  }
-
-  /* CTA */
-  .cta {
-    margin-top: 2rem;
-    padding: 3rem 1rem;
-    text-align: center;
-    background: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee') center/cover no-repeat;
-    color: white;
-    border-radius: 12px;
-    position: relative;
-  }
-
-  .cta::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.5);
-    border-radius: 12px;
-  }
-
-  .cta-content {
-    position: relative;
-    z-index: 1;
-  }
-
-  .cta button {
-    margin-top: 1rem;
-    padding: 0.75rem 1.5rem;
-    border: none;
-    background: #dde5d5;
-    color: #2f3e2f;
-    font-size: 1rem;
-    border-radius: 6px;
-    cursor: pointer;
   }
 
   /* FOOTER */
@@ -211,13 +220,9 @@
       gap: 1.5rem;
     }
 
-    .feature-card {
-      padding: 1.25rem;
-    }
-
-    .feature-card img {
-      width: 95px;
-      height: 95px;
+    .cta-buttons {
+      flex-direction: row;
+      justify-content: center;
     }
   }
 </style>
@@ -230,9 +235,9 @@
   </div>
 </section>
 
-<!-- CONTENT -->
 <div class="container">
 
+  <!-- EXPERIENCE -->
   <div class="section">
     <h2>Experience the Outdoors</h2>
     <p>
@@ -242,30 +247,36 @@
     </p>
   </div>
 
-  <!-- FEATURE CARDS -->
+  <!-- CTA (MOVED HERE) -->
+  <div class="cta">
+    <div class="cta-content">
+      <h2>Plan Your Visit</h2>
+      <p>Choose how you want to experience the park.</p>
+
+      <div class="cta-buttons">
+        <button class="primary" on:click={becomeMember}>
+          Become a Member
+        </button>
+
+        <button class="secondary" on:click={dayUse}>
+          Day Use
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FEATURES -->
   <div class="features">
     {#each features as feature}
       <a class="feature-card" href={feature.link}>
         <img src={feature.image} alt={feature.title} />
-
         <div class="feature-text">
           <h3>{feature.title}</h3>
           <p>{feature.description}</p>
-          <span class="cta-hint">
-            Learn more <span class="arrow">→</span>
-          </span>
+          <span class="cta-hint">Learn more →</span>
         </div>
       </a>
     {/each}
-  </div>
-
-  <!-- CTA -->
-  <div class="cta">
-    <div class="cta-content">
-      <h2>Plan Your Visit</h2>
-      <p>Come spend a day outdoors—you’ll want to stay longer.</p>
-      <button on:click={handleCTA}>Get Directions</button>
-    </div>
   </div>
 
 </div>
