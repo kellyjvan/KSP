@@ -1,13 +1,34 @@
 <script>
-    import Header from '../Header.svelte';
-    import ResponsiveTemplate from '../ResponsiveTemplate.svelte';
-    import Section from '../Section.svelte';
-    import "/src/app.css";
+  function handleCTA() {
+    alert("Redirecting...");
+  }
 
-    function handleCTA() {
-        // Replace with real navigation (Stripe, map, etc.)
-        alert("Redirecting...");
+  const features = [
+    {
+      title: "Archery Range",
+      description: "Practice precision shooting in a quiet, wooded setting.",
+      image: "https://images.unsplash.com/photo-1517649763962-0c623066013b",
+      link: "/archery"
+    },
+    {
+      title: "Shooting Ranges",
+      description: "Well-maintained ranges for all skill levels.",
+      image: "https://images.unsplash.com/photo-1581091215367-59ab6b8e52c8",
+      link: "/ranges"
+    },
+    {
+      title: "Motocross Track",
+      description: "High-energy dirt tracks built for speed and challenge.",
+      image: "https://images.unsplash.com/photo-1605559424843-9e4c228fa4c2",
+      link: "/motocross"
+    },
+    {
+      title: "Trails & Camping",
+      description: "Explore scenic trails and stay overnight under the stars.",
+      image: "https://images.unsplash.com/photo-1501785888041-af3ef285b470",
+      link: "/trails"
     }
+  ];
 </script>
 
 <style>
@@ -18,8 +39,9 @@
     color: #2f3e2f;
   }
 
+  /* HERO */
   .hero {
-    height: 60vh;
+    height: 70vh;
     background: linear-gradient(
         rgba(0,0,0,0.35),
         rgba(0,0,0,0.35)
@@ -47,6 +69,7 @@
     opacity: 0.9;
   }
 
+  /* CONTENT */
   .container {
     max-width: 1000px;
     margin: auto;
@@ -66,19 +89,74 @@
     max-width: 700px;
   }
 
+  /* FEATURE CARDS */
   .features {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+    display: grid;
+    gap: 1rem;
   }
 
-  .feature {
+  .feature-card {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding: 1.1rem;
     background: white;
     border-radius: 12px;
-    padding: 1.5rem;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.2s ease;
+    border: 1px solid #e5e9e2;
   }
 
+  .feature-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+  }
+
+  .feature-card img {
+    width: 85px;
+    height: 85px;
+    object-fit: cover;
+    border-radius: 10px;
+    flex-shrink: 0;
+  }
+
+  .feature-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .feature-text h3 {
+    margin: 0 0 0.25rem 0;
+    color: #2f3e2f;
+    font-size: 1.1rem;
+  }
+
+  .feature-text p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #555;
+  }
+
+  .cta-hint {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: #3d5a40;
+    font-weight: 500;
+  }
+
+  .arrow {
+    transition: transform 0.2s ease;
+  }
+
+  .feature-card:hover .arrow {
+    transform: translateX(4px);
+  }
+
+  /* CTA */
   .cta {
     margin-top: 2rem;
     padding: 3rem 1rem;
@@ -113,6 +191,7 @@
     cursor: pointer;
   }
 
+  /* FOOTER */
   footer {
     margin-top: 3rem;
     padding: 2rem 1rem;
@@ -121,25 +200,33 @@
     color: #cfd8cf;
   }
 
+  /* DESKTOP */
   @media (min-width: 768px) {
     .hero h1 {
       font-size: 4rem;
     }
 
     .features {
-      display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 2rem;
+      gap: 1.5rem;
+    }
+
+    .feature-card {
+      padding: 1.25rem;
+    }
+
+    .feature-card img {
+      width: 95px;
+      height: 95px;
     }
   }
 </style>
 
-<Header />
 <!-- HERO -->
 <section class="hero">
   <div class="hero-content">
-    <h1>Klamath Sportsman's Park</h1>
-    <p>Family oriented outdoor recreation in Keno, Oregon</p>
+    <h1>Evergreen Outdoor Park</h1>
+    <p>Where trails, fields, and open skies come together.</p>
   </div>
 </section>
 
@@ -155,35 +242,21 @@
     </p>
   </div>
 
+  <!-- FEATURE CARDS -->
   <div class="features">
-    <div class="feature">
-      <h2>Trails & Nature</h2>
-      <p>
-        Wander through scenic trails surrounded by trees, wildlife, and
-        peaceful landscapes.
-      </p>
-    </div>
+    {#each features as feature}
+      <a class="feature-card" href={feature.link}>
+        <img src={feature.image} alt={feature.title} />
 
-    <div class="feature">
-      <h2>Open Fields</h2>
-      <p>
-        Spacious areas perfect for sports, picnics, and community gatherings.
-      </p>
-    </div>
-
-    <div class="feature">
-      <h2>Family Friendly</h2>
-      <p>
-        Safe, welcoming spaces for families, kids, and casual outdoor fun.
-      </p>
-    </div>
-
-    <div class="feature">
-      <h2>Events & Gatherings</h2>
-      <p>
-        Seasonal events, local meetups, and outdoor activities year-round.
-      </p>
-    </div>
+        <div class="feature-text">
+          <h3>{feature.title}</h3>
+          <p>{feature.description}</p>
+          <span class="cta-hint">
+            Learn more <span class="arrow">→</span>
+          </span>
+        </div>
+      </a>
+    {/each}
   </div>
 
   <!-- CTA -->
