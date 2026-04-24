@@ -125,6 +125,7 @@
     display: flex;
     right: 0;
     position: absolute;
+    z-index: 100;
   }  
   
   @media (max-width: 992px) {

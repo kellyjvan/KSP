@@ -1,4 +1,7 @@
 <script>
+  import Footer from '../Footer.svelte';
+  import Header from '../Header.svelte';
+
   function becomeMember() {
     alert("Go to membership signup");
   }
@@ -13,6 +16,30 @@
       description: "Practice precision shooting in a quiet, wooded setting.",
       image: "https://images.unsplash.com/photo-1517649763962-0c623066013b",
       link: "/archery"
+    },
+    {
+      title: "Off Road Vehicles",
+      description: "Experience the thrill of off-road driving on challenging terrains.",
+      image: "https://images.unsplash.com/photo-1517649763962-0c623066013b",
+      link: "/offroad"
+    },
+    {
+      title: "Camping",
+      description: "Enjoy a night under the stars in our well-equipped camping areas.",
+      image: "https://images.unsplash.com/photo-1501785888041-af3ef285b470",
+      link: "/camping"
+    },
+    {
+      title: "RC Aircraft",
+      description: "Fly remote-controlled aircraft in a safe and open environment.",
+      image: "https://images.unsplash.com/photo-1517649763962-0c623066013b",
+      link: "/rc"
+    },
+    {
+      title: "Sporting Clays",
+      description: "Practice precision shooting in a quiet, wooded setting.",
+      image: "https://images.unsplash.com/photo-1517649763962-0c623066013b",
+      link: "/sportingclays"
     },
     {
       title: "Shooting Ranges",
@@ -200,15 +227,6 @@
     font-weight: 500;
   }
 
-  /* FOOTER */
-  footer {
-    margin-top: 3rem;
-    padding: 2rem 1rem;
-    text-align: center;
-    background: #2f3e2f;
-    color: #cfd8cf;
-  }
-
   /* DESKTOP */
   @media (min-width: 768px) {
     .hero h1 {
@@ -226,6 +244,8 @@
     }
   }
 </style>
+
+<Header />
 
 <!-- HERO -->
 <section class="hero">
@@ -281,8 +301,4 @@
 
 </div>
 
-<!-- FOOTER -->
-<footer>
-  <p>&copy; 2026 Evergreen Outdoor Park</p>
-  <p>info@evergreenpark.com</p>
-</footer>
+<Footer />
