@@ -9,6 +9,8 @@
 </style>
 
 <footer>
-  <p>&copy; 2026 Evergreen Outdoor Park</p>
-  <p>info@evergreenpark.com</p>
+  <p>Contact Us</p>
+  <p>About Us</p>
+  <p>Park Rules</p>
+  <p>Terms Of Use</p>
 </footer>
