@@ -148,16 +148,6 @@
     </div>
   </div>
 
-  <div class="section">
-    <div class="highlight">
-      <h2>Monthly Meetings</h2>
-      <p>
-        Klamath Sportsman's Park Association meetings are held at 6 PM on the second Tuesday of
-        the month at Sidelines Pizza in Klamath Falls. These meetings are open to the public.
-      </p>
-    </div>
-  </div>
-
   <div class="section map-section">
     <h2>Find Us</h2>
     <div class="map-wrapper">
