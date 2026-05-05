@@ -6,41 +6,46 @@
     {
       title: "Shooting Ranges",
       description: "Rifle and pistol ranges.",
-      image: "https://images.unsplash.com/photo-1581091215367-59ab6b8e52c8",
+      image: "/images/home/rangethumbnail.webp",
       link: "/ranges"
     },
     {
       title: "Off Road Vehicles",
       description: "Off-road vehicle track course.",
-      image: "https://images.unsplash.com/photo-1517649763962-0c623066013b",
+      image: "/images/home/offroadthumbnail.webp",
       link: "/offroad"
     },
     {
       title: "Camping",
       description: "Big Pines campground is now open!",
-      image: "https://images.unsplash.com/photo-1501785888041-af3ef285b470",
+      image: "/images/home/campingthumbnail.webp",
       link: "/camping"
     },
     {
       title: "Sporting Clays",
-      description: "Seasonal sporting clays courses.",
-      image: "https://images.unsplash.com/photo-1517649763962-0c623066013b",
+      description: "Seasonal sporting clays events.",
+      image: "/images/home/sportingclaysthumbnail.webp",
       link: "/sportingclays"
     },
     {
       title: "RC Aircraft",
       description: "Pilot RC aircraft from our runway.",
-      image: "https://images.unsplash.com/photo-1517649763962-0c623066013b",
-      link: "/rc"
+      image: "/images/home/rcthumbnail.webp",
+      link: "/airfield"
     },
     {
       title: "Archery",
       description: "Archery field course in a wooded setting.",
-      image: "https://images.unsplash.com/photo-1517649763962-0c623066013b",
+      image: "/images/home/archerythumbnail.webp",
       link: "/archery"
     }
   ];
 </script>
+
+<svelte:head>
+  <title>Klamath Sportsman's Park</title>
+  <meta name="description" content="Klamath Sportsman's Park — family outdoor recreation off Hwy 66, 8 miles west of Keno, Oregon. Shooting ranges, camping, archery, R/C aircraft, and more." />
+</svelte:head>
 
 <style>
   :global(body) {
@@ -52,20 +57,35 @@
 
   /* HERO */
   .hero {
+    position: relative;
     height: 70vh;
-    background: linear-gradient(
-        rgba(0,0,0,0.35),
-        rgba(0,0,0,0.35)
-      ),
-      url('https://images.unsplash.com/photo-1501785888041-af3ef285b470') center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: #fff;
+    overflow: hidden;
+  }
+
+  .hero-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.22);
+    z-index: 1;
   }
 
   .hero-content {
+    position: relative;
+    z-index: 2;
     max-width: 900px;
     padding: 1rem;
   }
@@ -89,12 +109,6 @@
 
   .section {
     margin-bottom: 2rem;
-  }
-
-  .section h2 {
-    margin-bottom: 0.75rem;
-    color: #3d5a40;
-    font-size: 2rem;
   }
 
   .section p {
@@ -180,6 +194,7 @@
     color: inherit;
     transition: all 0.2s ease;
     border: 1px solid #e5e9e2;
+    will-change: transform;
   }
 
   .feature-card:hover {
@@ -216,6 +231,12 @@
     font-weight: 500;
   }
 
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 2rem;
+    }
+  }
+
   /* DESKTOP */
   @media (min-width: 768px) {
     .hero h1 {
@@ -238,6 +259,8 @@
 
 <!-- HERO -->
 <section class="hero">
+  <img class="hero-image" src="/images/home/banner.webp" alt="Klamath Sportsman's Park landscape" />
+  <div class="hero-overlay"></div>
   <div class="hero-content">
     <h1>Klamath Sportsman's Park</h1>
     <p>
@@ -251,10 +274,11 @@
   <!-- EXPERIENCE -->
   <div class="section">
     <p>
-      Located off highway 39 about 12 miles west of Klamath Falls, we're dedicated to offering outdoor recreation for the whole family. We are open to the public!
+      Located off Hwy 66 about 8 miles west of Keno, Oregon, we're dedicated to offering outdoor recreation for the whole family. We are open to the public!
     </p>
     <p>
       Memberships are currently on sale. Not interested in membership? No problem - the park facilities are also available on a day use basis.
+      Thanks for your patience as we continue to update our website.
     </p>
   </div>
 

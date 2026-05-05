@@ -23,6 +23,11 @@
   ];
 </script>
 
+<svelte:head>
+  <title>Day Use - Klamath Sportsman's Park</title>
+  <meta name="description" content="Day use fees and rules at Klamath Sportsman's Park. Open to the public — shooting, archery, R/C aircraft, and more." />
+</svelte:head>
+
 <style>
   :global(body) {
     margin: 0;
@@ -116,6 +121,8 @@
   .row {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.25rem;
     font-size: 1.05rem;
   }
 
@@ -151,6 +158,11 @@
     font-size: 1.1rem;
     line-height: 1.6;
   }
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 2rem;
+    }
+  }
 </style>
 
 <Header />
@@ -165,7 +177,7 @@
   <div class="important">
     <strong>Important</strong>
     <p>
-      All visitors must check in at the kiosk before entering recreation areas. Please do not enter the park without checking in.
+      All visitors, including members, must check in at the kiosk before entering recreation areas. Please do not skip checking in at the kiosk!
     </p>
   </div>
 </div>
@@ -175,7 +187,9 @@
   <!-- INTRO -->
   <div class="section">
     <p>
-      The public may access the park on a day-use basis. Fees are listed below and must be paid for each person in party. Please bring cash or check. Currently, day use fees are not payable by card.
+      The public may access the park on a day-use basis. The day use fee grants you access to all areas of the park
+      for one day (ranges, off road area, archery, etc). Fees are listed below and must
+      be paid for each person in party. Please bring cash or check. Check in at the kiosk to pay and sign a liability waiver.
     </p>
   </div>
 

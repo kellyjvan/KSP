@@ -1,23 +1,33 @@
 <script>
   import Header from '../../Header.svelte';
   import Footer from '../../Footer.svelte';
+  import ImageViewer from '../../ImageViewer.svelte';
 
   let currentImage = 0;
 
   const images = [
-    { src: 'https://images.unsplash.com/photo-1581091215367-59ab6b8e52c8', alt: 'Rifle range' },
-    { src: 'https://images.unsplash.com/photo-1595590424283-b8f17842773f', alt: 'Pistol bay' },
-    { src: 'https://images.unsplash.com/photo-1584281722575-c4dcfd249fef', alt: 'Range facilities' }
+    { src: '/images/pistol/pistol_1.webp', alt: 'Pistol range bays' },
+    { src: '/images/pistol/pistol_2.webp', alt: 'Pistol range entrance' },
+    { src: '/images/pistol/pistol_3.webp', alt: 'Pistol range bays' },
+    { src: '/images/pistol/pistol_4.webp', alt: 'Pistol range bays' },
+    { src: '/images/pistol/pistol_5.webp', alt: 'Pistol range benches, cover and stove' },
+    { src: '/images/200/200_1.webp', alt: '200 meter range sign' },
+    { src: '/images/200/200_2.webp', alt: '200 meter range handicap access' },
+    { src: '/images/200/200_3.webp', alt: '200 meter range handicap accessible bench' },
+    { src: '/images/200/200_4.webp', alt: '200 meter range benches' },
+    { src: '/images/200/200_5.webp', alt: '200 meter range steel at 200' },
+    { src: '/images/600/600_1.webp', alt: '600 yard range cover' },
+    { src: '/images/600/600_2.webp', alt: '600 yard range benches and view' },
+    { src: '/images/600/600_3.webp', alt: '600 yard range benches' },
+    { src: '/images/600/600_4.webp', alt: '600 yard range stove and benches' },
+    { src: '/images/600/600_5.webp', alt: '600 yard range sign' }
   ];
-
-  function prev() {
-    currentImage = (currentImage - 1 + images.length) % images.length;
-  }
-
-  function next() {
-    currentImage = (currentImage + 1) % images.length;
-  }
 </script>
+
+<svelte:head>
+  <title>Shooting Ranges - Klamath Sportsman's Park</title>
+  <meta name="description" content="Pistol, 200 meter, and 600 yard shooting ranges at Klamath Sportsman's Park. Covered benches, steel targets, and ADA accessible." />
+</svelte:head>
 
 <style>
   :global(body) {
@@ -36,12 +46,7 @@
 
   .hero h1 {
     margin: 0 0 0.5rem;
-    font-size: 2.5rem;
-  }
-
-  .hero p {
-    margin: 0;
-    color: #4a5a4a;
+    font-size: 3rem;
   }
 
   .container {
@@ -57,10 +62,28 @@
   .section h2 {
     margin-bottom: 0.75rem;
     color: #3d5a40;
+    font-size: 2rem;
+  }
+
+  .section h3 {
+    margin-bottom: 0.5rem;
+    color: #2f3e2f;
+    font-size: 1.3rem;
   }
 
   .section p {
-    max-width: 700px;
+    font-size: 1.2rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  .list {
+    padding-left: 1rem;
+  }
+
+  .list li {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
   }
 
   /* VIDEO */
@@ -83,96 +106,23 @@
     border: none;
   }
 
-  /* IMAGE VIEWER */
-  .viewer {
-    position: relative;
-    border-radius: 12px;
-    overflow: hidden;
-    border: 1px solid #e5e9e2;
-    background: #000;
-  }
-
-  .viewer img {
-    width: 100%;
-    height: 0;
-    padding-bottom: 56.25%;
-    object-fit: cover;
-    display: block;
-  }
-
-  .viewer-controls {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 0.75rem;
-    pointer-events: none;
-  }
-
-  .viewer-controls button {
-    pointer-events: all;
-    background: rgba(255, 255, 255, 0.85);
-    border: none;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    color: #2f3e2f;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background 0.2s;
-  }
-
-  .viewer-controls button:hover {
-    background: #fff;
-  }
-
-  .viewer-caption {
-    text-align: center;
-    margin-top: 0.5rem;
-    font-size: 0.85rem;
-    color: #666;
-  }
-
   /* GRID */
   .grid {
     display: grid;
     gap: 1.5rem;
   }
 
+  .grid-label {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    color: #2f3e2f;
+    font-weight: 600;
+  }
+
   @media (min-width: 768px) {
     .grid {
       grid-template-columns: 1fr 1fr;
     }
-
-    .hero h1 {
-      font-size: 3rem;
-    }
-  }
-
-  /* CARD */
-  .card {
-    background: white;
-    border: 1px solid #e5e9e2;
-    border-radius: 12px;
-    padding: 1.5rem;
-  }
-
-  .card h3 {
-    margin-top: 0;
-    margin-bottom: 0.5rem;
-  }
-
-  .card p {
-    margin: 0;
-    font-size: 0.95rem;
-    color: #555;
   }
 
   /* IMPORTANT */
@@ -186,6 +136,27 @@
   .important strong {
     display: block;
     margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+  }
+
+  .important p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
+  .section a {
+    color: #3d5a40;
+    font-weight: 600;
+    text-decoration: underline;
+  }
+
+  .section a:hover {
+    color: #2f4632;
+  }
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 2rem;
+    }
   }
 </style>
 
@@ -193,70 +164,97 @@
 
 <section class="hero">
   <h1>Shooting Ranges</h1>
-  <p>Well-maintained ranges for all skill levels.</p>
 </section>
 
 <div class="container">
-
+  <!-- SAFETY -->
   <div class="section">
-    <p>
-      The park offers multiple shooting ranges suitable for beginners and
-      experienced shooters alike. All ranges are supervised and maintained to
-      ensure a safe and enjoyable experience.
-    </p>
-  </div>
-
-  <!-- RANGE INFO CARDS -->
-  <div class="section grid">
-    <div class="card">
-      <h3>Rifle Range</h3>
-      <p>Covered shooting positions with distances from 25 to 200 yards. Benches and target frames provided.</p>
-    </div>
-
-    <div class="card">
-      <h3>Pistol Bays</h3>
-      <p>Individual bays for handgun practice at various distances. Steel and paper target setups available.</p>
+    <div class="important">
+      <strong>Range Safety Rules</strong>
+      <p>Shooters must follow posted range rules at all times. Eye and ear protection are required. It's your responsibility
+         to conduct yourself in a safe manner. New shooters are welcome, but should be familiar
+         with basic firearm handling safety prior to visiting the range. Dangerous behavior won't be tolerated and may result in a park ban.</p>
     </div>
   </div>
-
-  <!-- VIDEO + PHOTOS -->
+  <!-- VIDEOS + PHOTOS -->
   <div class="section grid">
     <div>
-      <h2>See the Ranges</h2>
+      <div class="grid-label">Handicap accessible bay at the 200 meter range</div>
       <div class="video-wrapper">
         <iframe
-          src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
-          title="Shooting range tour"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          src="https://www.youtube.com/embed/uZ-uDxA36FU"
+          title="Handicap accessible bay tour"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen
+          loading="lazy"
         ></iframe>
       </div>
     </div>
 
     <div>
-      <h2>Photos</h2>
-      <div class="viewer">
-        <img src={images[currentImage].src} alt={images[currentImage].alt} />
-        <div class="viewer-controls">
-          <button on:click={prev}>&larr;</button>
-          <button on:click={next}>&rarr;</button>
-        </div>
-      </div>
-      <div class="viewer-caption">
-        {images[currentImage].alt} — {currentImage + 1} of {images.length}
+      <div class="grid-label">Main pistol range</div>
+      <div class="video-wrapper">
+        <iframe
+          src="https://www.youtube.com/embed/2YVk7XozfmI"
+          title="Main pistol range tour"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+          loading="lazy"
+        ></iframe>
       </div>
     </div>
-  </div>
 
-  <!-- SAFETY -->
+    <div>
+      <div class="grid-label">200 meter range
+      </div>
+      <div class="video-wrapper">
+        <iframe
+          src="https://www.youtube.com/embed/TObCl3sShtw"
+          title="200 meter range tour"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+          loading="lazy"
+        ></iframe>
+      </div>
+    </div>
+
+    <div>
+      <div class="grid-label">Photos</div>
+      <ImageViewer {images} bind:currentIndex={currentImage} />
+    </div>
+  </div>
   <div class="section">
-    <div class="important">
-      <strong>Range Safety Rules</strong>
-      <p>All shooters must follow posted range rules at all times. Eye and ear protection is required.</p>
-      <p>Cease fire commands must be obeyed immediately. No exceptions.</p>
-    </div>
+    <h2>About the Ranges</h2>
+    <p>
+      The park offers shotgun, pistol and rifle ranges to the public. Please note that occasionally JSSA closes the
+      public ranges for matches. These matches are open to the public and you are encouraged to participate! JSSA is a separate
+      organization from Klamath Sportsman's Park. Check the schedule and get more info <a href="https://jeffersonstateshooting.com/jssa-activity-schedule/" target="_blank" rel="noopener noreferrer">here</a>.      
+    </p>
+    <p>
+      Find steel plates at the end of the 200 meter rifle range. The 600 yard rifle range has steel plates at further distances.
+      The 50 yard pistol range has only target stands for paper targets.
+    </p>
+    <p>
+      You may bring your own steel or paper targets. <b>Absolutely no Tannerite! Absolutely no glass or plastic!</b>
+    </p>
+    <p>
+      All ranges are covered with concrete floors, benches, gun racks and shooting stations. The pistol and rifle ranges have woodstoves
+      for warming in the winter months. Target stands, yardage markers and berms are provided.
+    </p>
   </div>
 
+  <div class="section">
+    <h2>Accessibility</h2>
+    <p>The 50 yard pistol range has a handicap accessible bay. This bay is paved with a path leading downrange to set up targets.</p>
+    <p>
+      The 200 meter rifle range also has a handicap accessible bay with attached handicap parking spot and a wheelchair accessible
+      dirt path downrange to setup targets. The 600 yard rifle range is less handicap accessible.
+    </p>
+    <p>Watch the video and check out the photos for a good view of the ranges and their accessibility features.</p>
+  </div>
+
+
+  
 </div>
 
-<Footer />-
+<Footer />

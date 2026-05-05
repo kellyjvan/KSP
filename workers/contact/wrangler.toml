@@ -1,0 +1,30 @@
+name = "ksp-contact"
+main = "src/index.ts"
+compatibility_date = "2024-12-01"
+workers_dev = false
+
+# Daily heartbeat at ~9 AM Pacific (17:00 UTC)
+[triggers]
+crons = ["0 17 * * *"]
+
+# KV namespace for rate limiting and stats
+# After creating the namespace, replace the id below:
+#   npx wrangler kv namespace create "CONTACT_KV"
+[[kv_namespaces]]
+binding = "CONTACT_KV"
+id = "608e08efe92940d09ffa00b1e6e1bb9f"
+
+# Non-secret environment variables
+[vars]
+ALLOWED_ORIGIN = "https://klamathsportsmanspark.com"
+
+# Secrets (set via `npx wrangler secret put <NAME>`):
+# - RESEND_API_KEY
+# - RECIPIENTS      (comma-separated recipient emails)
+# - ALERT_EMAIL     (email for daily heartbeat)
+# - FROM_EMAIL      (sending address, e.g. noreply@klamathsportsmanspark.com)
+
+# Custom domain route (configure after first deploy):
+# [routes]
+# pattern = "contact.klamathsportsmanspark.com/*"
+# zone_name = "klamathsportsmanspark.com"
