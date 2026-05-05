@@ -39,7 +39,7 @@
   <ul class="footer-links">
     <li><a href="/about">About Us</a></li>
     <li><a href="/contact">Contact Us</a></li>
-    <li><a href="/termsofservice">Terms of Service</a></li>
+    <li><a href="/terms">Terms of Service</a></li>
   </ul>
   <p class="copyright">Klamath Sportsman's Park · {new Date().getFullYear()} · Off Hwy 66 about 8 miles west of Keno, Oregon</p>
 </footer>
