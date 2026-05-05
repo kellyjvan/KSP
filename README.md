@@ -249,14 +249,47 @@ KSP/
 
 ---
 
-## Production Deployment (Static Site)
+## Branching & Deployment
 
-Not yet configured. Plan is:
+```
+dev (default branch) ── work here, push freely
+ │
+ └──► merge/PR into main ── triggers GitHub Actions deploy
+```
 
-1. Install `@sveltejs/adapter-static`
-2. Configure `svelte.config.js` with base path matching the GitHub repo name
-3. Add `src/routes/+layout.js` with `export const prerender = true`
-4. Set up GitHub Actions to build and deploy to GitHub Pages on push
+- **`dev`** — Default branch for day-to-day development. Pushes here do NOT trigger deploys.
+- **`main`** — Production branch. Pushes here trigger GitHub Actions workflows.
+
+### Deploying to Production
+
+```bash
+# From dev branch, when ready to release:
+git checkout main
+git merge dev
+git push origin main        # triggers deploy
+git checkout dev            # switch back to working branch
+```
+
+Or create a Pull Request from `dev` → `main` on GitHub.
+
+### What Gets Deployed
+
+Two separate GitHub Actions workflows run on push to `main`, each with path-based triggers:
+
+| Workflow | Trigger Paths | What It Does |
+|----------|--------------|--------------|
+| `deploy-site.yml` | Everything except `workers/`, `raw-photos/`, `README.md` | Builds SvelteKit and deploys to GitHub Pages |
+| `deploy-worker.yml` | `workers/contact/**` only | Deploys Cloudflare Worker via Wrangler |
+
+### Domains
+
+| Domain | Points To |
+|--------|-----------|
+| `klamathsportsmanspark.com` | GitHub Pages (A records) |
+| `www.klamathsportsmanspark.com` | GitHub Pages (CNAME) |
+| `klamathsportsmenspark.com` | 301 redirect → `klamathsportsmanspark.com` |
+| `www.klamathsportsmenspark.com` | 301 redirect → `klamathsportsmanspark.com` |
+| `contact.klamathsportsmanspark.com` | Cloudflare Worker |
 
 ---
 
