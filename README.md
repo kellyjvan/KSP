@@ -1,5 +1,8 @@
 # Klamath Sportsman's Park Website
 
+[![Deploy Site](https://github.com/kellyjvan/KSP/actions/workflows/deploy-site.yml/badge.svg?branch=main)](https://github.com/kellyjvan/KSP/actions/workflows/deploy-site.yml)
+[![Deploy Worker](https://github.com/kellyjvan/KSP/actions/workflows/deploy-worker.yml/badge.svg?branch=main)](https://github.com/kellyjvan/KSP/actions/workflows/deploy-worker.yml)
+
 SvelteKit static site for Klamath Sportsman's Park, hosted on GitHub Pages with a Cloudflare Worker handling the contact form.
 
 ## Architecture
