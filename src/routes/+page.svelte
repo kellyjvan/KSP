@@ -277,7 +277,7 @@
       Located off Hwy 66 about 8 miles west of Keno, Oregon, we're dedicated to offering outdoor recreation for the whole family. We are open to the public!
     </p>
     <p>
-      Memberships are currently on sale. Not interested in membership? No problem - the park facilities are also available on a day use basis.
+      Memberships go on sale Saturday, May 9th 2026. Not interested in membership? No problem - the park facilities are also available on a day use basis.
       Thanks for your patience as we continue to update our website.
     </p>
   </div>
