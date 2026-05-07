@@ -138,7 +138,7 @@
     <p>
       Becoming a member means gaining access to the park year round without having to pay additional fees.
       If you purchase online, an email receipt is sent shortly after. This is your temporary card
-      until your physical card arrives. 
+      until your physical card arrives. A screenshot of the receipt is fine - you don't need a printed copy.
     </p>
     <p>
       If you purchase by mail, you won't have a temporary card. Leave your
