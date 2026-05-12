@@ -2,6 +2,7 @@
   import Header from '../../Header.svelte';
   import Footer from '../../Footer.svelte';
   import ImageViewer from '../../ImageViewer.svelte';
+  import YouTubeEmbed from '../../YouTubeEmbed.svelte';
 
   let currentImage = 0;
 
@@ -115,15 +116,6 @@
     border-radius: 12px;
     border: 1px solid #e5e9e2;
     background: #000;
-  }
-
-  .video-wrapper iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
   }
 
   .video-label {
@@ -277,26 +269,14 @@
     <div>
       <div class="video-label">Campground Tour</div>
       <div class="video-wrapper">
-        <iframe
-          src="https://www.youtube.com/embed/7uNNNLFzGBE"
-          title="Campground tour"
-          loading="lazy"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-        ></iframe>
+        <YouTubeEmbed videoId="7uNNNLFzGBE" title="Campground tour" />
       </div>
     </div>
 
     <div>
       <div class="video-label">Facilities Overview</div>
       <div class="video-wrapper">
-        <iframe
-          src="https://www.youtube.com/embed/XG7ThVRYKkc"
-          title="Facilities overview"
-          loading="lazy"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-        ></iframe>
+        <YouTubeEmbed videoId="XG7ThVRYKkc" title="Facilities overview" />
       </div>
     </div>
   </div>

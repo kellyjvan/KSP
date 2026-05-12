@@ -117,6 +117,15 @@
     margin-bottom: 1rem;
   }
 
+  .section a {
+    color: #3d5a40;
+    font-weight: 600;
+  }
+
+  .section a:hover {
+    color: #2f4632;
+  }
+
   /* CTA */
   .cta {
     margin: 2rem 0 3rem;
@@ -280,13 +289,16 @@
       Memberships go on sale Saturday, May 9th 2026. Not interested in membership? No problem - the park facilities are also available on a day use basis.
       Thanks for your patience as we continue to update our website.
     </p>
+    <p>
+      Interested in being a camp host? Reach out to us using our contact form <a href="/contact">here</a>.
+    </p>
   </div>
 
   <!-- CTA -->
   <div class="cta">
     <div class="cta-content">
-      <h2>Plan Your Visit</h2>
-      <p>Both options available to the general public!</p>
+      <h2>Membership is open to the public</h2>
+      <p>Day use option available to the public too</p>
       <div class="cta-buttons">
         <a href="/membership" class="primary">Become a Member</a>
         <a href="/dayuse" class="secondary">Day Use</a>

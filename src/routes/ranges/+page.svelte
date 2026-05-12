@@ -2,6 +2,7 @@
   import Header from '../../Header.svelte';
   import Footer from '../../Footer.svelte';
   import ImageViewer from '../../ImageViewer.svelte';
+  import YouTubeEmbed from '../../YouTubeEmbed.svelte';
 
   let currentImage = 0;
 
@@ -97,15 +98,6 @@
     background: #000;
   }
 
-  .video-wrapper iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-  }
-
   /* GRID */
   .grid {
     display: grid;
@@ -181,26 +173,14 @@
     <div>
       <div class="grid-label">Handicap accessible bay at the 200 meter range</div>
       <div class="video-wrapper">
-        <iframe
-          src="https://www.youtube.com/embed/uZ-uDxA36FU"
-          title="Handicap accessible bay tour"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-          loading="lazy"
-        ></iframe>
+        <YouTubeEmbed videoId="uZ-uDxA36FU" title="Handicap accessible bay tour" />
       </div>
     </div>
 
     <div>
       <div class="grid-label">Main pistol range</div>
       <div class="video-wrapper">
-        <iframe
-          src="https://www.youtube.com/embed/2YVk7XozfmI"
-          title="Main pistol range tour"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-          loading="lazy"
-        ></iframe>
+        <YouTubeEmbed videoId="2YVk7XozfmI" title="Main pistol range tour" />
       </div>
     </div>
 
@@ -208,13 +188,7 @@
       <div class="grid-label">200 meter range
       </div>
       <div class="video-wrapper">
-        <iframe
-          src="https://www.youtube.com/embed/TObCl3sShtw"
-          title="200 meter range tour"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-          loading="lazy"
-        ></iframe>
+        <YouTubeEmbed videoId="TObCl3sShtw" title="200 meter range tour" />
       </div>
     </div>
 

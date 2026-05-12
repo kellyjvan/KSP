@@ -2,6 +2,7 @@
   import Header from '../../Header.svelte';
   import Footer from '../../Footer.svelte';
   import ImageViewer from '../../ImageViewer.svelte';
+  import YouTubeEmbed from '../../YouTubeEmbed.svelte';
 
   let currentImage = 0;
 
@@ -97,15 +98,6 @@
     background: #000;
   }
 
-  .video-wrapper iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-  }
-
   /* GRID */
   .grid {
     display: grid;
@@ -136,13 +128,7 @@
     <div>
       <h2>See the Airfield</h2>
       <div class="video-wrapper">
-        <iframe
-          src="https://www.youtube.com/embed/7_Xgjl1vt7w"
-          title="Klamath Sportsmen's Park Airfield"
-          loading="lazy"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-        ></iframe>
+        <YouTubeEmbed videoId="7_Xgjl1vt7w" title="Klamath Sportsmen's Park Airfield" />
       </div>
     </div>
 
