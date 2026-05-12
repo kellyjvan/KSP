@@ -154,7 +154,7 @@
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3047.1260870523274!2d-122.0215926239643!3d42.139062949035136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54cf27cc743962a3%3A0xc92a8354f90a2f5b!2sKlamath%20Sportsmen&#39;s%20Park!5e1!3m2!1sen!2sus!4v1777826219610!5m2!1sen!2sus&maptype=roadmap"
         title="Klamath Sportsman's Park location"
-        allowfullscreen=""
+        allowfullscreen
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
       ></iframe>
