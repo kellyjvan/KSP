@@ -12,10 +12,10 @@
 	},
 	"type": "module",
 	"devDependencies": {
-		"@sveltejs/adapter-auto": "^6.0.0",
 		"@sveltejs/adapter-static": "^3.0.10",
 		"@sveltejs/kit": "^2.49.2",
 		"@sveltejs/vite-plugin-svelte": "^5.0.0",
+		"@types/node": "^25.8.0",
 		"sharp": "^0.34.5",
 		"svelte": "^5.0.0",
 		"svelte-check": "^4.0.0",

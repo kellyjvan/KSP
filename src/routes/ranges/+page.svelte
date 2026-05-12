@@ -2,6 +2,7 @@
   import Header from '../../Header.svelte';
   import Footer from '../../Footer.svelte';
   import ImageViewer from '../../ImageViewer.svelte';
+  import YouTubeEmbed from '../../YouTubeEmbed.svelte';
 
   let currentImage = 0;
 
@@ -67,8 +68,8 @@
 
   .section h3 {
     margin-bottom: 0.5rem;
-    color: #2f3e2f;
-    font-size: 1.3rem;
+    color: #3d5a40;
+    font-size: 1.6rem;
   }
 
   .section p {
@@ -95,15 +96,6 @@
     border-radius: 12px;
     border: 1px solid #e5e9e2;
     background: #000;
-  }
-
-  .video-wrapper iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
   }
 
   /* GRID */
@@ -181,26 +173,14 @@
     <div>
       <div class="grid-label">Handicap accessible bay at the 200 meter range</div>
       <div class="video-wrapper">
-        <iframe
-          src="https://www.youtube.com/embed/uZ-uDxA36FU"
-          title="Handicap accessible bay tour"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-          loading="lazy"
-        ></iframe>
+        <YouTubeEmbed videoId="uZ-uDxA36FU" title="Handicap accessible bay tour" />
       </div>
     </div>
 
     <div>
       <div class="grid-label">Main pistol range</div>
       <div class="video-wrapper">
-        <iframe
-          src="https://www.youtube.com/embed/2YVk7XozfmI"
-          title="Main pistol range tour"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-          loading="lazy"
-        ></iframe>
+        <YouTubeEmbed videoId="2YVk7XozfmI" title="Main pistol range tour" />
       </div>
     </div>
 
@@ -208,13 +188,7 @@
       <div class="grid-label">200 meter range
       </div>
       <div class="video-wrapper">
-        <iframe
-          src="https://www.youtube.com/embed/TObCl3sShtw"
-          title="200 meter range tour"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-          loading="lazy"
-        ></iframe>
+        <YouTubeEmbed videoId="TObCl3sShtw" title="200 meter range tour" />
       </div>
     </div>
 
@@ -226,17 +200,19 @@
   <div class="section">
     <h2>About the Ranges</h2>
     <p>
-      The park offers shotgun, pistol and rifle ranges to the public. Please note that occasionally JSSA closes the
-      public ranges for matches. These matches are open to the public and you are encouraged to participate! JSSA is a separate
-      organization from Klamath Sportsman's Park. Check the schedule and get more info <a href="https://jeffersonstateshooting.com/jssa-activity-schedule/" target="_blank" rel="noopener noreferrer">here</a>.      
+        The park offers shotgun, pistol and rifle ranges to the public. These ranges are managed independently by JSSA, an organization that is separate
+        from Klamath Sportsman's Park. JSSA runs shooting matches most weekends that are open to the public. Check out their <a href="https://www.facebook.com/share/1HxpS82B73/" target="_blank" rel="noopener noreferrer">Facebook page</a> and
+        <a href="https://calendar.google.com/calendar/embed?src=b1nvrd7cghpd2jope8vfjkgn88%40group.calendar.google.com&ctz=America%2FLos_Angeles" target="_blank" rel="noopener noreferrer">match schedule</a>.
     </p>
+
+    <h3>Targets</h3>
     <p>
       Find steel plates at the end of the 200 meter rifle range. The 600 yard rifle range has steel plates at further distances.
       The 50 yard pistol range has only target stands for paper targets.
-    </p>
-    <p>
       You may bring your own steel or paper targets. <b>Absolutely no Tannerite! Absolutely no glass or plastic!</b>
     </p>
+
+    <h3>Facilities</h3>
     <p>
       All ranges are covered with concrete floors, benches, gun racks and shooting stations. The pistol and rifle ranges have woodstoves
       for warming in the winter months. Target stands, yardage markers and berms are provided.
