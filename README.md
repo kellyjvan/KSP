@@ -121,16 +121,12 @@ Located in `workers/contact/`. Handles contact form submissions and sends emails
 
 - **`POST /`** — Receives form submissions, validates, rate limits, sends email to recipients
 - **`OPTIONS /`** — CORS preflight
-- **`GET /health`** — Sends a test email to verify the pipeline works
 - **Cron (daily 9 AM Pacific)** — Sends a health check email with submission stats
 
 ### Environment Variables (in `wrangler.toml`)
 
 | Variable | Value |
 |----------|-------|
-| `RECIPIENTS` | Comma-separated list of org email addresses |
-| `ALERT_EMAIL` | Your personal email for the daily heartbeat |
-| `FROM_EMAIL` | Sending address, e.g., `noreply@klamathsportsmanspark.com` |
 | `ALLOWED_ORIGIN` | `https://klamathsportsmanspark.com` |
 
 ### Secrets (stored in Cloudflare, NOT in code)
@@ -138,6 +134,9 @@ Located in `workers/contact/`. Handles contact form submissions and sends emails
 | Secret | Description |
 |--------|-------------|
 | `RESEND_API_KEY` | Resend API key for sending email |
+| `RECIPIENTS` | Comma-separated list of org email addresses |
+| `ALERT_EMAIL` | Email for the daily heartbeat |
+| `FROM_EMAIL` | Sending address, e.g., `noreply@klamathsportsmanspark.com` |
 
 ### Deploying the Worker
 
@@ -169,8 +168,8 @@ npx wrangler kv namespace create "CONTACT_KV"
 
 ### Testing
 
-- Health check: visit `https://contact.klamathsportsmanspark.com/health`
 - Form submission: submit the contact form on the site
+- Daily heartbeat: check your alert email each morning
 
 ---
 
@@ -212,7 +211,7 @@ KSP/
 ├── src/
 │   ├── routes/              # SvelteKit pages
 │   │   ├── +page.svelte     # Home
-│   │   ├── about/
+│   │   ├── about-us/
 │   │   ├── airfield/
 │   │   ├── archery/
 │   │   ├── camping/
@@ -222,10 +221,11 @@ KSP/
 │   │   ├── offroad/
 │   │   ├── ranges/
 │   │   ├── sportingclays/
-│   │   └── termsofservice/
+│   │   └── terms/
 │   ├── Header.svelte        # Shared nav (desktop + mobile)
 │   ├── Footer.svelte        # Shared footer
 │   ├── ImageViewer.svelte   # Photo viewer with modal
+│   ├── YouTubeEmbed.svelte  # Video facade (thumbnail until clicked)
 │   └── app.css              # Global styles (currently empty)
 ├── static/
 │   └── images/              # Optimized WebP images
@@ -300,5 +300,5 @@ Two separate GitHub Actions workflows run on push to `main`, each with path-base
 - **Sending email:** `noreply@klamathsportsmanspark.com`
 - **Recipients:** Stored as Cloudflare Worker secrets
 - **Daily heartbeat:** 9 AM Pacific to alert email (stored as secret)
-- **YouTube videos:** Airfield, Pistol, 200m, 600yd ranges, Camping (x2)
+- **YouTube videos:** Ranges (3: handicap bay, pistol, 200m), Airfield, Camping (x2)
 - **Stripe buy button:** `buy_btn_1NCCGqS9ZzXHNdtHCP1jJQba` (membership page)

@@ -1,6 +1,4 @@
 <script>
-  import "/src/app.css";
-
   let menuOpen = false;
 
   const navLinks = [
