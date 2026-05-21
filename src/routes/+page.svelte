@@ -286,7 +286,7 @@
       Located off Hwy 66 about 8 miles west of Keno, Oregon, we're dedicated to offering outdoor recreation for the whole family. We are open to the public.
     </p>
     <p>
-      Memberships are on sale now!
+      Memberships are on sale now! Head on over to <a href="/membership">memberships</a>.
     </p>
     <p>
       Interested in being a camp host? Reach out to us using our contact form <a href="/contact">here</a>.
