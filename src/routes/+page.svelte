@@ -283,7 +283,7 @@
   <!-- EXPERIENCE -->
   <div class="section">
     <p>
-      Located off Hwy 66 about 8 miles west of Keno, Oregon, we're dedicated to offering outdoor recreation for the whole family. We are open to the public.
+      Located off Hwy 66 about 8 miles west of Keno, Oregon, we're dedicated to offering outdoor recreation for the whole family. We are open to the public. Closed only Thanksgiving Day and Christmas Day!
     </p>
     <p>
       Memberships are on sale now! Head on over to <a href="/membership">memberships</a>.

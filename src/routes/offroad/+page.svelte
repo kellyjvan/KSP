@@ -119,8 +119,18 @@
       <p>
         Klamath Sportsman's Park is looking for a motocross club to take over stewardship of the motocross
         areas at the park. This would mean committing to the maintenance of the motocross areas, overseeing        
-        motocross events and sending a representative to monthly board of directors meetings. Your club
-        must be a nonprofit organization. If interested, please use the <a href="/contact">contact page</a>
+        motocross events and sending a representative to monthly board of directors meetings.
+      </p>
+      <p>
+        <i>
+          Update - this page previously stated that a club was required to be a non profit organization to
+          take over stewardship - this is not correct. The correct requirements are that you must have 10 or
+          more individual members, hold regular meetings and collect dues. You must declare intent to become a
+          member organization of the park and send a rep to each regularly scheduled board of directors meeting.
+        </i>
+      </p>
+      <p>
+        If interested, please use the <a href="/contact">contact page</a>
         to send us your contact details, or drop them in the box at the kiosk.</p>
     </div>
   </div>
