@@ -136,18 +136,17 @@
   <div class="section">
     <h2>2026-2027 memberships now available</h2>
     <p>
-      Becoming a member means gaining access to the park year round without having to pay additional fees.
-      If you purchase online, an email receipt is sent shortly after. This is your temporary card
-      until your physical card arrives. A screenshot of the receipt is fine - you don't need a printed copy.
+      Become a member to gain access to the park year round without having to pay day use fees each time you visit. A membership
+      covers you, your spouse and any children under 18. We are closed only two days a year (Christmas and Thanksgiving).
+      Our membership year runs June 1 - May 31.
     </p>
     <p>
-      If you purchase by mail, you won't have a temporary card. Leave your
-      details at the kiosk when you visit until your card arrives. If you purchase in person at the park, you
-      will receive a physical temporary card from the host. 
+      Memberships are available for purchase online, by mail, or in person at the park.
+      After purchase, a physical card with your membership info is mailed to you. You can still access the park if you haven't
+      yet received your card, inquire at the kiosk for help with this.
     </p>
-    <p>
-      If possible, please use the online payment option. It's the fastest turnaround for receiving your card. 
-      It covers you, your spouse, and any children under 18. Our membership year runs June 1 - May 31.
+    <p> If possible, please use the online payment option, it's the fastest turnaround for processing. Or, if you prefer to buy through
+      a member organization, contact them directly.
     </p>
   </div>
 

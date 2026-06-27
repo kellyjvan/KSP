@@ -7,6 +7,7 @@
   let currentImage = 0;
 
   const images = [
+    { src: '/images/rc/rc_6.webp', alt: 'RC aircraft on display' },
     { src: '/images/rc/rc_1.webp', alt: 'RC aircraft field view 1' },
     { src: '/images/rc/rc_2.webp', alt: 'RC aircraft field view 2' },
     { src: '/images/rc/rc_3.webp', alt: 'RC aircraft field view 3' },
