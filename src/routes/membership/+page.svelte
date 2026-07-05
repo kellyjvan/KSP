@@ -1,3 +1,7 @@
+<script context="module">
+  export const csr = false;
+</script>
+
 <script>
   import Header from '../../Header.svelte';
   import Footer from '../../Footer.svelte';
