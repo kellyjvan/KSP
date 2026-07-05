@@ -118,6 +118,25 @@
     font-size: 1.1rem;
     line-height: 1.6;
   }
+  .important {
+    background: #fff7e6;
+    border: 1px solid #f0d9a7;
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .important strong {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+  }
+
+  .important p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 0;
+  }
   @media (max-width: 768px) {
     .hero h1 {
       font-size: 2rem;
@@ -133,6 +152,13 @@
 
 <div class="container">
   <div class="section">
+    <div class="important">
+      <strong>Online payment button should be fixed on mobile devices!</strong>
+      <p>
+        Didn't realize that the buy button was not loading correctly on phones
+        and other small devices, but it should be working now! Sorry about that.
+      </p>
+    </div>
     <h2>2026-2027 memberships now available</h2>
     <p>
       Become a member to gain access to the park year round without having to pay day use fees each time you visit. A membership
