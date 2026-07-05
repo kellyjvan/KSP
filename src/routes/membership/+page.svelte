@@ -4,7 +4,6 @@
 </script>
 
 <svelte:head>
-  <script async src="https://js.stripe.com/v3/buy-button.js"></script>
   <title>Membership - Klamath Sportsman's Park</title>
   <meta name="description" content="Annual and lifetime memberships at Klamath Sportsman's Park. Discounted range fees, camping, and access to all park facilities." />
 </svelte:head>
@@ -154,6 +153,7 @@
     <div class="card signup-card">
       <h3>Pay Online</h3>
       <p>Pay with a card</p>
+      <script async src="https://js.stripe.com/v3/buy-button.js"></script>
       <stripe-buy-button
         buy-button-id="buy_btn_1NCCGqS9ZzXHNdtHCP1jJQba"
         publishable-key="pk_live_51J75X0S9ZzXHNdtHjnaoszYQVNtK8Qb6NkscxvijOmYRusFpiURvSCbKJ6SGJCyRTEKSau2jFilbSQKqrVUhBlgW00Ym89ze4b"
