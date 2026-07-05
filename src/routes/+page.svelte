@@ -286,7 +286,7 @@
       Located off Hwy 66 about 8 miles west of Keno, Oregon, we're dedicated to offering outdoor recreation for the whole family. We are open to the public. Closed only Thanksgiving Day and Christmas Day!
     </p>
     <p>
-      Memberships are on sale now! Head on over to <a href="/membership">memberships</a>.
+      Memberships are on sale now! Head on over to <a href="/membership" data-sveltekit-reload>memberships</a>.
     </p>
     <p>
       Interested in being a camp host? Reach out to us using our contact form <a href="/contact">here</a>.
@@ -299,7 +299,7 @@
       <h2>Membership is open to the public</h2>
       <p>Day use option available to the public too</p>
       <div class="cta-buttons">
-        <a href="/membership" class="primary">Become a Member</a>
+        <a href="/membership" class="primary" data-sveltekit-reload>Become a Member</a>
         <a href="/dayuse" class="secondary">Day Use</a>
       </div>
     </div>

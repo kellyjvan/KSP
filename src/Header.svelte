@@ -3,7 +3,7 @@
 
   const navLinks = [
     { href: "/dayuse", label: "Day Use" },
-    { href: "/membership", label: "Membership" },
+    { href: "/membership", label: "Membership", reload: true },
     { href: "/ranges", label: "Shooting" },
     { href: "/sportingclays", label: "Sporting Clays" },
     { href: "/archery", label: "Archery" },
@@ -258,7 +258,7 @@
       <div class="dropdown-panel">
         <ul>
           {#each navLinks as link}
-            <li><a href={link.href} on:click={closeMenu}>{link.label}</a></li>
+            <li><a href={link.href} on:click={closeMenu} data-sveltekit-reload={link.reload ? '' : undefined}>{link.label}</a></li>
           {/each}
         </ul>
         <div class="close-row">
@@ -279,7 +279,7 @@
     </div>
     <ul class="nav-links">
       {#each navLinks as link}
-        <li><a href={link.href}>{link.label}</a></li>
+        <li><a href={link.href} data-sveltekit-reload={link.reload ? '' : undefined}>{link.label}</a></li>
       {/each}
     </ul>
   </div>
