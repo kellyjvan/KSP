@@ -320,7 +320,7 @@
     <div class="important">
       <strong>Flightmasters of Klamath are hosting a campover event this weekend, 9/19 and 9/20!</strong>
       <p>
-        Come on out for flying, camping, BBQ and games. There will also be a potluck! Check out their <a href="/airfield">page</a> for a link to their Facebook page.
+        Come on out for flying, camping, BBQ and games. There will also be a potluck!
       </p>
     </div>
   <!-- EXPERIENCE -->
