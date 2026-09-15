@@ -2,11 +2,16 @@
   import Header from '../../Header.svelte';
   import Footer from '../../Footer.svelte';
   import ImageViewer from '../../ImageViewer.svelte';
+  import YouTubeEmbed from '../../YouTubeEmbed.svelte';
 
   let currentImage = 0;
 
   const images = [
-    { src: '/images/sportingclays/sportingclays_1.webp', alt: 'Sporting clays course' }
+    { src: '/images/sportingclays/sportingclays_5.webp', alt: 'Sporting clays station' },
+    { src: '/images/sportingclays/sportingclays_1.webp', alt: 'Sporting clays station' },
+    { src: '/images/sportingclays/sportingclays_2.webp', alt: 'Sporting clays station' },
+    { src: '/images/sportingclays/sportingclays_3.webp', alt: 'Sporting clays station' },
+    { src: '/images/sportingclays/sportingclays_4.webp', alt: 'Sporting clays station' }
   ];
 </script>
 
@@ -82,6 +87,13 @@
     gap: 1.5rem;
   }
 
+  .grid-label {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    color: #2f3e2f;
+    font-weight: 600;
+  }
+
   @media (min-width: 768px) {
     .grid {
       grid-template-columns: 1fr 1fr;
@@ -136,6 +148,16 @@
       font-size: 2rem;
     }
   }
+
+  .video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid #e5e9e2;
+    background: #000;
+  }
 </style>
 
 <Header />
@@ -145,16 +167,27 @@
 </section>
 
 <div class="container">
-  <!-- PHOTOS -->
-  <div class="section">
-    <ImageViewer {images} bind:currentIndex={currentImage} fit="contain" />
-  </div>
   <!-- SAFETY -->
   <div class="section">
     <div class="important">
       <strong>Safety Rules</strong>
       <p>Eye and ear protection are required at all times. All shotguns must remain unloaded with actions
          open until the shooter is in the shooting cage. No shot larger than #7 1/2 is allowed on the range.</p>
+    </div>
+  </div>
+
+  <!-- PHOTOS -->
+  <div class="section grid">
+    <div>
+      <div class="grid-label">Sporting Clays Course</div>
+      <div class="video-wrapper">
+        <YouTubeEmbed videoId="GKECzxpOWmE" title="Sporting clays course tour" />
+      </div>
+    </div>
+
+    <div>
+      <div class="grid-label">Photos</div>
+      <ImageViewer {images} bind:currentIndex={currentImage} />
     </div>
   </div>
 

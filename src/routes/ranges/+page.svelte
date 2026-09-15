@@ -178,17 +178,25 @@
     </div>
 
     <div>
-      <div class="grid-label">Main pistol range</div>
+      <div class="grid-label">Main Pistol Range</div>
       <div class="video-wrapper">
         <YouTubeEmbed videoId="2YVk7XozfmI" title="Main pistol range tour" />
       </div>
     </div>
 
     <div>
-      <div class="grid-label">200 meter range
+      <div class="grid-label">200 Meter Range
       </div>
       <div class="video-wrapper">
         <YouTubeEmbed videoId="TObCl3sShtw" title="200 meter range tour" />
+      </div>
+    </div>
+
+    <div>
+      <div class="grid-label">600 Yard Range
+      </div>
+      <div class="video-wrapper">
+        <YouTubeEmbed videoId="OKptCWI6MUQ" title="600 yard range tour" />
       </div>
     </div>
 

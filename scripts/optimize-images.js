@@ -73,12 +73,12 @@ import { join, extname } from 'path';
 const INPUT = './raw-photos';
 const OUTPUT = './static/images';
 const MAX_WIDTH = 1400;
-const QUALITY = 13;
+const QUALITY = 40;
 
 // Per-folder quality overrides. Key = folder name, value = quality (1-100).
 // Folders not listed here use the default QUALITY above.
 const QUALITY_OVERRIDES = {
-  rc: 100,
+  rc: 65,
   camping: 60
 };
 
