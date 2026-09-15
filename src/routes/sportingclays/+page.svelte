@@ -7,7 +7,6 @@
   let currentImage = 0;
 
   const images = [
-    { src: '/images/sportingclays/sportingclays_5.webp', alt: 'Sporting clays station' },
     { src: '/images/sportingclays/sportingclays_1.webp', alt: 'Sporting clays station' },
     { src: '/images/sportingclays/sportingclays_2.webp', alt: 'Sporting clays station' },
     { src: '/images/sportingclays/sportingclays_3.webp', alt: 'Sporting clays station' },
