@@ -55,44 +55,6 @@
     color: #2f3e2f;
   }
 
-  /* important */
-  .important {
-    background: #fff7e6;
-    border: 1px solid #f0d9a7;
-    border-radius: 10px;
-    padding: 1rem;
-  }
-
-  .important strong {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-size: 1.2rem;
-  }
-
-  .important p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-  }
-  .important {
-    background: #64de8d;
-    border: 1px solid #f0d9a7;
-    border-radius: 10px;
-    padding: 1rem 1.25rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .important strong {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-size: 1.2rem;
-  }
-
-  .important p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin: 0;
-  }
-
   /* HERO */
   .hero {
     position: relative;
@@ -317,12 +279,6 @@
 </section>
 
 <div class="container">
-    <div class="important">
-      <strong>Flightmasters of Klamath are hosting a campover event this weekend, 9/19 and 9/20!</strong>
-      <p>
-        Come on out for flying, camping, BBQ and games. There will also be a potluck!
-      </p>
-    </div>
   <!-- EXPERIENCE -->
   <div class="section">
     <p>
