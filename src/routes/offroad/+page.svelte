@@ -114,25 +114,6 @@
 
   <!-- VOLUNTEER NOTICE -->
   <div class="section">
-    <div class="important">
-      <strong>Motocross Club Needed</strong>
-      <p>
-        Klamath Sportsman's Park is looking for a motocross club to take over stewardship of the motocross
-        areas at the park. This would mean committing to the maintenance of the motocross areas, overseeing        
-        motocross events and sending a representative to monthly board of directors meetings.
-      </p>
-      <p>
-        <i>
-          Update - this page previously stated that a club was required to be a non profit organization to
-          take over stewardship - this is not correct. The correct requirements are that you must have 10 or
-          more individual members, hold regular meetings and collect dues. You must declare intent to become a
-          member organization of the park and send a rep to each regularly scheduled board of directors meeting.
-        </i>
-      </p>
-      <p>
-        If interested, please use the <a href="/contact">contact page</a>
-        to send us your contact details, or drop them in the box at the kiosk.</p>
-    </div>
   </div>
 
   <!-- PHOTOS -->
@@ -146,8 +127,7 @@
     <p>
       The park has dedicated areas for off-road vehicles including an ATV riding area and a motocross track.
       The track covers 5 acres and features starting gates, multiple jumps, and turns. The 10 acre riding area
-      is undergoing gradual development. We are looking for a club to take stewardship of our off-road areas,
-      see the yellow notice above.
+      is undergoing gradual development.
     </p>
   </div>
 
