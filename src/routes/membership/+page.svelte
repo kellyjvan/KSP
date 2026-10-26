@@ -152,13 +152,6 @@
 
 <div class="container">
   <div class="section">
-    <div class="important">
-      <strong>Online payment button should be fixed on mobile devices!</strong>
-      <p>
-        Didn't realize that the buy button was not loading correctly on phones
-        and other small devices, but it should be working now! Sorry about that.
-      </p>
-    </div>
     <h2>2026-2027 memberships now available</h2>
     <p>
       Become a member to gain access to the park year round without having to pay day use fees each time you visit. A membership
