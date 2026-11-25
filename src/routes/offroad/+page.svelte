@@ -79,7 +79,12 @@
     font-size: 1.1rem;
   }
 
-  /* IMPORTANT */
+  .important-wrapper {
+    max-width: 1000px;
+    margin: auto;
+    padding: 2rem 1.5rem 0;
+  }
+
   .important {
     background: #fff7e6;
     border: 1px solid #f0d9a7;
@@ -97,11 +102,6 @@
     font-size: 1.1rem;
     line-height: 1.6;
   }
-  @media (max-width: 768px) {
-    .hero h1 {
-      font-size: 2rem;
-    }
-  }
 </style>
 
 <Header />
@@ -110,12 +110,14 @@
   <h1>Off-Road Vehicles</h1>
 </section>
 
-<div class="container">
-
-  <!-- VOLUNTEER NOTICE -->
-  <div class="section">
+<div class="important-wrapper">
+  <div class="important">
+    <strong>Important</strong>
+    <p>The motocross track has closed for the winter. It will reopen in the spring, as soon as weather allows.</p>
   </div>
+</div>
 
+<div class="container">
   <!-- PHOTOS -->
   <div class="section">
     <h2>Photos</h2>
@@ -130,7 +132,6 @@
       is undergoing gradual development.
     </p>
   </div>
-
 </div>
 
 <Footer />
