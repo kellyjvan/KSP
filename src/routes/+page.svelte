@@ -309,6 +309,13 @@
   </div>
 </div>
 
+<div class="important-wrapper">
+  <div class="important">
+    <strong>Important</strong>
+    <p>The motocross track has closed for the winter. It will reopen in the spring, as soon as weather allows.</p>
+  </div>
+</div>
+
 <div class="container">
 
   <!-- EXPERIENCE -->
