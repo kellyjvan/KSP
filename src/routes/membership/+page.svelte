@@ -101,6 +101,18 @@
     background: #f3f6f1;
   }
 
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 2rem;
+    }
+  }
+
+  .important-wrapper {
+    max-width: 1000px;
+    margin: auto;
+    padding: 2rem 1.5rem 0;
+  }
+
   .important {
     background: #fff7e6;
     border: 1px solid #f0d9a7;
@@ -118,30 +130,6 @@
     font-size: 1.1rem;
     line-height: 1.6;
   }
-  .important {
-    background: #fff7e6;
-    border: 1px solid #f0d9a7;
-    border-radius: 10px;
-    padding: 1rem 1.25rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .important strong {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-size: 1.2rem;
-  }
-
-  .important p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin: 0;
-  }
-  @media (max-width: 768px) {
-    .hero h1 {
-      font-size: 2rem;
-    }
-  }
 </style>
 
 <Header />
@@ -149,6 +137,13 @@
 <section class="hero">
   <h1>Membership</h1>
 </section>
+
+<div class="important-wrapper">
+  <div class="important">
+    <strong>Important</strong>
+    <p>Membership sales will close on December 1st and reopen on January 15th at our half year rate of 30$.</p>
+  </div>
+</div>
 
 <div class="container">
   <div class="section">

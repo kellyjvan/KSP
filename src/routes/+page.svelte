@@ -262,6 +262,30 @@
       justify-content: center;
     }
   }
+
+  .important-wrapper {
+    max-width: 1000px;
+    margin: auto;
+    padding: 2rem 1.5rem 0;
+  }
+
+  .important {
+    background: #fff7e6;
+    border: 1px solid #f0d9a7;
+    border-radius: 10px;
+    padding: 1rem;
+  }
+
+  .important strong {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+  }
+
+  .important p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
 </style>
 
 <Header />
@@ -278,7 +302,15 @@
   </div>
 </section>
 
+<div class="important-wrapper">
+  <div class="important">
+    <strong>Important</strong>
+    <p>Membership sales will close on December 1st and reopen on January 15th at our half year rate of 30$.</p>
+  </div>
+</div>
+
 <div class="container">
+
   <!-- EXPERIENCE -->
   <div class="section">
     <p>
